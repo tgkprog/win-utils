@@ -1,0 +1,7 @@
+ÿŒUsage: pass files as arguments, whose full path will be written to a file called dir.txt in the path of the first 
+file 
+Place this exe in your send to folder for easy usage. 
+Your send to folder is "C:\Documents and Settings\tushar\SendTo\ "
+*** Press Yes if you want me to copy my self to that folder.
+- http://code.google.com/p/win-utils/
+Copyright 2009 Tushar Kapila http://sel2in.com
