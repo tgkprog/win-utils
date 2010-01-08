@@ -6,6 +6,7 @@ Begin VB.Form Form1
    ClientLeft      =   165
    ClientTop       =   855
    ClientWidth     =   9495
+   Icon            =   "f2-sett.frx":0000
    LinkTopic       =   "Form1"
    ScaleHeight     =   5130
    ScaleWidth      =   9495
@@ -72,11 +73,11 @@ Begin VB.Form Form1
    End
    Begin VB.CommandButton cmdCopySendTo 
       Caption         =   "Copy overwrite to send to folder"
-      Height          =   615
-      Left            =   2760
+      Height          =   975
+      Left            =   8160
       TabIndex        =   5
-      Top             =   4320
-      Width           =   1815
+      Top             =   480
+      Width           =   1095
    End
    Begin VB.CommandButton cmdSavClos 
       Caption         =   "S&ave && close"
@@ -118,7 +119,7 @@ Begin VB.Form Form1
       MultiLine       =   -1  'True
       TabIndex        =   0
       TabStop         =   0   'False
-      Text            =   "Form1.frx":0000
+      Text            =   "f2-sett.frx":030A
       Top             =   0
       Width           =   7455
    End
@@ -131,6 +132,9 @@ Begin VB.Form Form1
       Begin VB.Menu mnuReload 
          Caption         =   "Reload"
          Shortcut        =   ^R
+      End
+      Begin VB.Menu mnuCopyToSendTo 
+         Caption         =   "Copy To 'SendTo' folder"
       End
       Begin VB.Menu mnuQuit 
          Caption         =   "Quit"
@@ -209,6 +213,10 @@ Text1.Text = Replace(Text1.Text, "C:\Documents and Settings\tushar\SendTo\", Env
 Text1.Text = Replace(Text1.Text, "{{[SendTo]}}", Environ("USERPROFILE") & "\SendTo\")
 Text1.Text = Text1.Text & vbNewLine & "Version " & App.Major & "." & App.Minor & "." & App.Revision
 cmdReload_Click
+End Sub
+
+Private Sub mnuCopyToSendTo_Click()
+cmdCopySendTo_Click
 End Sub
 
 Private Sub mnuQuit_Click()
