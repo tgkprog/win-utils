@@ -1,8 +1,14 @@
 Attribute VB_Name = "CmdFiles"
+''''test cases
+'''all files
+' "D:\usrs\tushar\docs\resume\sel2in-recruit\09\2\Copy 3 CV Jude C.doc" "D:\usrs\tushar\docs\resume\sel2in-recruit\09\2\CV Jude C.doc" D:\usrs\tushar\docs\resume\sel2in-recruit\09\2\LavanyaGururaj-cv.doc D:\usrs\tushar\docs\rme\sel2init\09\2\
+''' a folder
+'"D:\usrs\tushar\docs\resume\sel2in-recruit\09\2\
 Option Explicit
 Public fso As FileSystemObject
 Dim ff As File
 Dim fOut As TextStream
+Public Const App_CAP = "Path to Text file or Clipboard"
 Sub Main()
 On Local Error GoTo errh
 Dim frm As Form1
@@ -19,15 +25,25 @@ args = GetCommandLine
 
 Dim i, max
 Dim fld As Folder
-
-Set ff = fso.GetFile(args(1))
+Dim sParentFolder As String
+If fso.FileExists(args(1)) Then
+    Set ff = fso.GetFile(args(1))
+    sParentFolder = ff.ParentFolder
+ElseIf fso.FolderExists(args(1)) Then
+    Set fld = fso.GetFolder(args(1))
+    sParentFolder = fld.Path
+Else
+    frm.Show
+    MsgBox "Invalid file/ folder in parameter 1, please see usage", vbInformation, App_CAP
+    Exit Sub
+End If
 
 max = UBound(args)
 If frm.optFile Then
     If InStr(1, frm.txtFileName, ":") > 0 Then
         Set fOut = fso.OpenTextFile(frm.txtFileName, ForWriting, True)
     Else
-        Set fOut = fso.OpenTextFile(ff.ParentFolder & "\" & frm.txtFileName, ForWriting, True)
+        Set fOut = fso.OpenTextFile(sParentFolder & "\" & frm.txtFileName, ForWriting, True)
     End If
 End If
 #If dbg = 1 Then
@@ -85,7 +101,7 @@ ElseIf Not Command() = "" Then
             Call fso.CopyFile(App.Path & "\" & App.EXEName, a, True)
     End If
 End If
-
+End
 
 End Sub
 Function GetCommandLine(Optional MaxArgs)
