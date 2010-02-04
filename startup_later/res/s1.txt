@@ -1,0 +1,7 @@
+E:\ProgramFiles\FileZilla_Client\filezilla.exe
+E:\ProgramFiles\TextPad4\TextPad.exe
+E:\ProgramFiles\TextPad4\TextPad2.exe
+"C:\Program Files\Outlook Express\msimn.exe"
+E:\ProgramFiles\Mozilla\Firefox\firefox.exe -p t
+E:\ProgramFiles\Mozilla\Firefox\firefox_lauren.exe -p lauren --no-remote
+E:\ProgramFiles\Mozilla\Firefox\firefox_jack.exe -p jack --no-remote
