@@ -1,7 +1,7 @@
 VERSION 5.00
 Begin VB.Form Frm1 
    BackColor       =   &H00C0C0C0&
-   Caption         =   "Volume Control With Timer - sel2in.com"
+   Caption         =   "Volume Mute & Unmute With Timer - sel2in.com"
    ClientHeight    =   1515
    ClientLeft      =   165
    ClientTop       =   855
@@ -92,29 +92,32 @@ Begin VB.Form Frm1
       Width           =   1575
    End
    Begin VB.Menu mnuMnd 
-      Caption         =   "Actions"
+      Caption         =   "&Actions"
       Begin VB.Menu mnuRefh 
          Caption         =   "Refresh"
          Shortcut        =   {F5}
       End
       Begin VB.Menu mnuSet 
-         Caption         =   "Set"
+         Caption         =   "&Set"
          Shortcut        =   {F2}
       End
    End
    Begin VB.Menu mnuHelpTopDmy 
-      Caption         =   "Help"
+      Caption         =   "&Help"
       Begin VB.Menu mnuHelp 
          Caption         =   "Help"
+         Shortcut        =   {F1}
       End
       Begin VB.Menu mnuAbout 
          Caption         =   "About"
       End
       Begin VB.Menu mnuWebsite 
          Caption         =   "Website"
+         Shortcut        =   {F12}
       End
       Begin VB.Menu mnuEmail 
          Caption         =   "Support and feedback Email "
+         Shortcut        =   {F11}
       End
       Begin VB.Menu mnuFeedbackGet 
          Caption         =   "One click feedback"
@@ -134,7 +137,7 @@ End Sub
 
 Private Sub cmdRrefresh_Click()
 Dim aa
-MsgBox "Not yet implemented"
+MsgBox "Not yet implemented", "Volume Mute/Unmute"
 'waveOutGetVolume 1, aa
 'cmdRrefresh.Caption = "Refresh Vol now is " & GetVolume(1)
 End Sub
@@ -192,7 +195,7 @@ Private Sub mnuHelp_Click()
 MsgBox "Allows you to set the volume and set the volume to a new value after the seconds you enter. Nice to skip ads or put speakers on mute for a while/ change volume after a while." _
  & vbNewLine & "Set the volume you want the system to be set to currently on first text box, seconds you want it wait in the second text box and finally the new volume to be set (from 0 to 100 maximum) in the 3rd. Then press the set button" _
  & vbNewLine & "Command line : param 1 : volume to set now; param 2: seconds to wait; param 3: volume after wait" _
- & vbNewLine & "See batch file ""RunVolumeChangeSilent.bat""for a sample" _
+ & vbNewLine & "See batch file ""RunVolumeChangeSilent.bat"" for a sample" _
   , vbInformation, "Change volume with timer"
   
 End Sub
