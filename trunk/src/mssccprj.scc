@@ -1,9 +1,14 @@
 [SCC]
 SCC=This is a source code control file
-[PrjCmdFiles.vbp]
-SCC_Project_Name ="$/s/WinUtls/CmdLineArgsDirTxt", WAAAAAAA
-SCC_Aux_Path =G:\prjs\ms_souurceSafe\db1,
-
-[CmdLineToDirTxt.vbp]
-SCC_Aux_Path =G:\prjs\ms_souurceSafe\db1,
-SCC_Project_Name ="$/s/WinUtls/CmdLineArgsDirTxt", WAAAAAAA
+[VolumeP.frm]
+SCC_Project_Name="$/s/WinUtls/VolumeChange", SBAAAAAA
+SCC_Aux_Path=G:\prjs\ms_souurceSafe\db1,
+[VolumeChangeTimerAp.vbw]
+SCC_Project_Name="$/s/WinUtls/VolumeChange", SBAAAAAA
+SCC_Aux_Path=G:\prjs\ms_souurceSafe\db1,
+[VolTmr.vbp]
+SCC_Project_Name=this project is not under source code control
+SCC_Aux_Path=<This is an empty string for the mssccprj.scc file>
+[VolumeP.vbp]
+SCC_Project_Name=this project is not under source code control
+SCC_Aux_Path=<This is an empty string for the mssccprj.scc file>
